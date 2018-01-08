@@ -3,16 +3,11 @@ global:
 
 sources:
     mapzen:
-        type: TopoJSON
-        url: https://tile.mapzen.com/mapzen/vector/v1/all/{z}/{x}/{y}.topojson
-        url_params:
-            api_key: mapzen-RPLAUsu
+        type: MVT
+        url:  /sf_mvt_10_15/all/{z}/{x}/{y}.mvt
+        tile_size: 512
+        max_zoom: 15
 
-    normals:
-        type: Raster
-        url: https://tile.mapzen.com/mapzen/terrain/v1/normal/{z}/{x}/{y}.png
-        url_params:
-            api_key: mapzen-RPLAUsu
 
 styles:
     terrain-bla:

@@ -17,8 +17,27 @@
 </head>
 
 <body>
-    add leaflet map here
-        
+
+    <div id="map" style="width: 800px; height: 500px; margin: auto;"></div>
+
+<script>
+
+var map = L.map('map');
+
+var layer = Tangram.leafletLayer({
+    scene: 'scene.yaml',
+    attribution: '<a href="https://mapzen.com/tangram" target="_blank">Tangram</a> | &copy; OSM contributors | <a href="https://mapzen.com/" target="_blank">Mapzen</a>'
+});
+
+layer.addTo(map);
+
+map.setView([37.70808 , -122.51489 ], 11);
+
+
+
+
+
+    </script>        
     
 </body>
 
