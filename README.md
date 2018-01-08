@@ -23,9 +23,9 @@ This will generate a .zip file called `sf_mvt_10_15.zip`, make sure you move tha
 Inside `scene.yaml`:
 
 `sources:
-    mapzen:
-        type: MVT
-        url:  /sf_mvt_10_15/all/{z}/{x}/{y}.mvt
-        tile_size: 512
-        max_zoom: 15`
+  mapzen:
+    type: MVT
+    url:  /sf_mvt_10_15/all/{z}/{x}/{y}.mvt
+    tile_size: 512
+    max_zoom: 15`
 
