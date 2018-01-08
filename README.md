@@ -2,7 +2,7 @@
 Running an offline mapzen styled map since Mapzen is shutting down
 https://mapzen.com/blog/migration/
 
-Should work offline and display this:
+Should work offline and display this: (note: using default `scene.yaml` file)
 
 ![screenshot](https://raw.githubusercontent.com/vomc/mapzenTests/master/Screen%20Shot%202018-01-08%20at%203.08.10%20PM.png)
 
