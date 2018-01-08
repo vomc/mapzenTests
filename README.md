@@ -1,25 +1,38 @@
 # mapzenTests
-Running the Amman map style on heroku since MapZen is shutting down
+Running an offline mapzen styled map since Mapzen is shutting down
 https://mapzen.com/blog/migration/
 
-From their docs
+Should work offline and display this: (note: using default `scene.yaml` file)
 
-To run a map for a city or a region with no network dependencies:
+![screenshot](https://raw.githubusercontent.com/vomc/mapzenTests/master/Screen%20Shot%202018-01-08%20at%203.08.10%20PM.png)
 
-Save `mapzen.js / tangram.js, index.html` and `scene.yaml` file in a directory.
-Extract a pyramid of tiles for area of interest using tilepack and save them in that same directory. (Note you don’t need to go beyond z15 tiles as they contain all the data in higher (>= 16) tiles, and Tangram overzooms.)
-To download tiles from our hosted services before shutdown:
 
-https://github.com/tilezen/tilepacks MAPZEN_API_KEY=mapzen-xxxxxx tilepack -122.51489 37.70808 -122.35698 37.83239 10 15 sf_mvt_10_15 --tile-size 512
+## How to setup
 
-Size and download speeds makes this viable for a city and perhaps a region. The example above generates a 30MB pyramid of MVT tiles, or 138MB of topojson, for San Francisco. For GeoJSON, SF is 67MB at z14, and 130MB at z15.
+Clone the repo and run this on localhost:999 via `sudo python -m SimpleHTTPServer 999` and it should work. Note that we are just using the `scene.yaml` file here, not the `refill-style.yaml` just yet. 
 
-Serve tiles via a web server (localhost or hosted).
-Create a scene file for Tangram. Note you will need to override the mapzen source in the scene file if you are importing a basemap.
-sources:
-    mapzen:
-        type: MVT
-        url:  localhost:8000/sf_mvt_10_15/all/{z}/{x}/{y}.mvt
-        tile_size: 512
-        max_zoom: 15
+## How to generate your own tiles using tilepack
+
+You will need python3 on your machine and then follow the setup from here: 
+
+https://github.com/tilezen/tilepacks
+
+Once you have that installed inside a virtual env, first activate it:
+
+`source env/bin/activate`
+
+Then run the command like this (use your own MAPZEN key):
+
+`$ MAPZEN_API_KEY=mapzen-xxxxxx tilepack -122.51489 37.70808 -122.35698 37.83239 10 15 sf_mvt_10_15 --tile-size 512`
+
+This will download tiles for San Francisco (note that the bounds are specified in reverse for some reason and you start with the bottom left corner, then the top right). This will generate a .zip file called `sf_mvt_10_15.zip`, make sure you move that into this repository and then unzip it.
+
+Inside `scene.yaml`:
+
+`sources:
+  mapzen:
+    type: MVT
+    url:  /sf_mvt_10_15/all/{z}/{x}/{y}.mvt
+    tile_size: 512
+    max_zoom: 15`
 
