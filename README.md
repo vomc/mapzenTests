@@ -23,7 +23,7 @@ Once you have that installed inside a virtual env, run the command like this (us
 
 `$ MAPZEN_API_KEY=mapzen-xxxxxx tilepack -122.51489 37.70808 -122.35698 37.83239 10 15 sf_mvt_10_15 --tile-size 512`
 
-This will generate a .zip file called `sf_mvt_10_15.zip`, make sure you move that into this repository and then unzip it.
+This will download tiles for San Francisco (note that the bounds are specified in reverse for some reason and you start with the bottom left corner, then the top right). This will generate a .zip file called `sf_mvt_10_15.zip`, make sure you move that into this repository and then unzip it.
 
 Inside `scene.yaml`:
 
