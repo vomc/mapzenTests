@@ -2,6 +2,11 @@
 Running an offline mapzen styled map since Mapzen is shutting down
 https://mapzen.com/blog/migration/
 
+Should work offline and display this:
+
+![screenshot](https://raw.githubusercontent.com/vomc/mapzenTests/master/Screen%20Shot%202018-01-08%20at%203.08.10%20PM.png)
+
+
 ** setup **
 
 Clone the repo and run this on localhost:999 via `sudo python -m SimpleHTTPServer 999` and it should work.
