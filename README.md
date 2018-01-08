@@ -7,11 +7,11 @@ Should work offline and display this:
 ![screenshot](https://raw.githubusercontent.com/vomc/mapzenTests/master/Screen%20Shot%202018-01-08%20at%203.08.10%20PM.png)
 
 
-** setup **
+## How to setup
 
 Clone the repo and run this on localhost:999 via `sudo python -m SimpleHTTPServer 999` and it should work.
 
-** to reproduce **
+## How to build your own
 
 To reproduce this you will need to setup the files in this repository. Note that we are just using the `scene.yaml` file here, not the `refill-style.yaml` just yet.
 
