@@ -4,7 +4,7 @@ global:
 sources:
     mapzen:
         type: MVT
-        url:  amman/amman2_mvt_10_15/all/{z}/{x}/{y}.mvt
+        url:  amman/amman4_mvt_1_15/all/{z}/{x}/{y}.mvt
         tile_size: 512
         max_zoom: 15
 

@@ -574,13 +574,10 @@ textures:
 
 sources:
     mapzen:
-        type: TopoJSON #GeoJSON, MVT, TopoJSON
-        url:  https://tile.mapzen.com/mapzen/vector/v1/all/{z}/{x}/{y}.topojson
-        url_params:
-            api_key: global.sdk_mapzen_api_key
-        #url:  https://tile.dev.mapzen.com/mapzen/vector/v1/all/{z}/{x}/{y}.topojson
-        # url:  //localhost:8080/vector/all/{z}/{x}/{y}.topojson
-        max_zoom: 16
+        type: MVT
+        url:  amman/amman4_mvt_1_15/all/{z}/{x}/{y}.mvt
+        tile_size: 512
+        max_zoom: 15
 
     # # Only enable this for local debug, should not be enabled for prod (app inserts these at runtime)
     # # These are all in San Francisco, California
