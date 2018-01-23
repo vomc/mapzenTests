@@ -5,6 +5,7 @@ sources:
     mapzen:
         type: MVT
         url:  http://54.245.34.179:8080/buildings/16/19293/24641.mvt
+        tile_size: 512
         max_zoom: 16
 
 
