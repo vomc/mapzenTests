@@ -16,7 +16,7 @@ import:
 global:
     # Sign up for a Mapzen API key to enjoy higher rate limits
     # https://mapzen.com/documentation/overview/#developer-accounts-and-api-keys
-    sdk_mapzen_api_key: 'mapzen-6Lefst1'     # swapped for key provided to Beth
+    # sdk_mapzen_api_key: 'mapzen-6Lefst1'     # swapped for key provided to Beth
 
    
 
@@ -3450,7 +3450,7 @@ layers:
                             transform: uppercase
 
     places:
-        data: { source: mapzen, layer: places }
+        data: { source: mapzen }
         filter:
             name: true
         draw:
@@ -3471,6 +3471,16 @@ layers:
                     family: global.text_font_family
                     fill: global.black_color
             # END NOTE
+            # adding regular places from
+            # default scene file - jochen
+            text:
+                font:
+                    weight: 200
+                    size: 18px
+                    family: sans-serif
+                    fill: grey
+                    #stroke: { color: black, width: 2 }
+
 
         country:
             filter:
