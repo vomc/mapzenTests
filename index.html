@@ -25,13 +25,22 @@
 var map = L.map('map');
 
 var layer = Tangram.leafletLayer({
-    scene: 'refill-style.yaml',
+    // swapping back to nyc
+    scene: 'scene3d.yaml',
+    // amman
+    //scene: 'refill-style.yaml',
+    
     attribution: '<a href="https://mapzen.com/tangram" target="_blank">Tangram</a> | &copy; OSM contributors | <a href="https://mapzen.com/" target="_blank">Mapzen</a>'
 });
 
 layer.addTo(map);
 
-map.setView([31.952300 , 35.922638 ], 11);
+
+// amman
+//map.setView([31.952300 , 35.922638 ], 11);
+
+// testing nyc metro area
+map.setView([-74.01747501,40.70571558], 16);
 
 
 
